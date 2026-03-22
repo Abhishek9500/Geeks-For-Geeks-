@@ -3,15 +3,14 @@ class Solution {
   public:
     string removeDuplicates(string &s) {
         // code here
-        map<char,int>mp;
-        string ans="";
-        for(int i=0;i<s.size();i++){
-            if(mp.find(s[i])==mp.end()){
-                ans+=s[i];
-                mp[s[i]]++;
+        vector<int>visited(256,0);
+        string result="";
+        for(char ch:s){
+            if(visited[ch]==0){
+                visited[ch]=1;
+                result+=ch;
             }
-            else continue;
         }
-        return ans;
+        return result;
     }
 };
