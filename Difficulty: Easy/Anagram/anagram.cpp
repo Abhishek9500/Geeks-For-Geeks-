@@ -2,9 +2,8 @@ class Solution {
   public:
     bool areAnagrams(string& s1, string& s2) {
         // code here
-        int n=s1.size();
-        map<char,int>mp;
-        for(int i=0;i<n;i++){
+        map<int,int>mp;
+        for(int i=0;i<s1.size();i++){
             mp[s1[i]]++;
         }
         
